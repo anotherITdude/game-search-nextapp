@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import { Grid, GridItem, Show } from '@chakra-ui/react'
 import Navbar from './components/Navbar'
+import GameList from './components/GameList'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -14,7 +15,7 @@ export default function Home() {
         md: `"nav nav" "aside main"`,
       }}
     >
-      <GridItem area="nav" color='teal'>
+      <GridItem area="nav">
         <Navbar />
       </GridItem>
       <Show above="md">
@@ -23,7 +24,7 @@ export default function Home() {
         </GridItem>
       </Show>
       <GridItem area="main">
-        main
+        <GameList />
       </GridItem>
     </Grid>
     </>

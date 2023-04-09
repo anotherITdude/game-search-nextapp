@@ -35,11 +35,11 @@ const iconMap: { [key: string]: IconType } = {
 
 const PlatformIconList = ({ platforms }: Props) => {
   return (
-    <>
+    <div>
       {platforms?.map((p) => (
         <Icon marginY={2} marginX={1} color={"gray.400"} as={iconMap[p.slug]} />
       ))}
-    </>
+    </div>
   );
 };
 

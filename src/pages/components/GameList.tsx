@@ -8,7 +8,8 @@ import { Genre } from "@/hooks/useGenres";
 interface Props {
   selectedGenre: Genre | null
 }
-const GameList = ({selectedGenre}:Props) => {
+
+const GameList = ({selectedGenre}: Props) => {
   const { data, error, isLoading } = useGames(selectedGenre);
   const skeletons = [1, 2, 3, 4, 5, 6];
   return (

@@ -13,7 +13,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   
-  const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null)
+  const [ selectedGenre, setSelectedGenre ] = useState<Genre | null>(null)
 
   return (
     <>

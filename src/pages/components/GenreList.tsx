@@ -11,11 +11,12 @@ import {
 import getCroppedImage from "../../services/Image-url";
 
 interface Props {
-    onSelectGenre: (genre:Genre) => void;
+    onSelectGenre: (selectedDenre: Genre) => void;
 }
-const GenreList = ({onSelectGenre}: Props) => {
-    const { data, isLoading, error } = useGenres();
-    
+
+const GenreList = ({onSelectGenre} : Props) => {
+  const { data, isLoading, error } = useGenres();
+  if (error) return null;
   if (isLoading) return <Spinner />;
   return (
     <List marginY={8}>

@@ -1,33 +1,41 @@
 import { useState, useEffect } from "react";
 import apiClient from "@/services/api-client";
 import { AxiosRequestConfig, CanceledError } from "axios";
-
-
 interface fetchResponse<T> {
   count: number;
   results: T[];
 }
 
-const useData = <T>(endpoint: string, requestConfig?: AxiosRequestConfig, dependencies?: any[] ) => {
+const useData = <T>(
+  endpoint: string,
+  requestConfig: AxiosRequestConfig,
+  dependencies: any[]
+) => {
   const [data, setData] = useState<T[]>([]);
-  const [error, setError] = useState('');
-  const [ isLoading , setLoading] =useState(false);
-  useEffect(() => {
-    const controller = new AbortController();
-    setLoading(true)
-    apiClient
-      .get<fetchResponse<T>>(endpoint, { signal: controller.signal, ...requestConfig })
-      .then((res) => {
-        setData(res.data.results);
-        setLoading(false)
-      })
-      .catch((err) => {
-        if (err instanceof CanceledError) return;
-        setError(err.message);
-      });
+  const [error, setError] = useState("");
+  const [isLoading, setLoading] = useState(false);
+  useEffect(
+    () => {
+      const controller = new AbortController();
+      setLoading(true);
+      apiClient
+        .get<fetchResponse<T>>(endpoint, {
+          signal: controller.signal,
+          ...requestConfig,
+        })
+        .then((res) => {
+          setData(res.data.results);
+          setLoading(false);
+        })
+        .catch((err) => {
+          if (err instanceof CanceledError) return;
+          setError(err.message);
+        });
 
-    return () => controller.abort();
-  }, dependencies ? [...dependencies] : []);
+      return () => controller.abort();
+    },
+    dependencies ? [...dependencies] : []
+  );
   return { data, error, isLoading };
 };
 

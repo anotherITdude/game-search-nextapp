@@ -12,15 +12,15 @@ const GameCard = ({ game }: Props) => {
   return (
     <>
       {game ? (
-        <Card>
+        <Card minHeight={'290px'}>
           <Image
             width="auto"
             alt={game.name}
             src={getCroppedImage(game.background_image)}
           />
           <CardBody>
-            <Heading fontSize="xl">{game.name}</Heading>
-            <HStack justifyContent="space-between" marginY={2}>
+            <Heading fontSize="lg">{game.name}</Heading>
+            <HStack justifyContent="space-between" marginY={3}>
               <PlatformIconList
                 platforms={game.parent_platforms.map((p) => p.platform)}
               />

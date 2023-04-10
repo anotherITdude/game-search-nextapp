@@ -15,13 +15,17 @@ export default function Home() {
           base: `"nav" "main"`,
           md: `"nav nav" "aside main"`,
         }}
+        templateColumns={{
+          base: '1fr',
+          md: '200px 1fr'
+        }}
       >
         <GridItem area="nav">
           <Navbar />
         </GridItem>
         <Show above="md">
-          <GridItem area="aside">
-            <GenreList />sdf
+          <GridItem area="aside" paddingX={5}>
+            <GenreList />
           </GridItem>
         </Show>
         <GridItem area="main">

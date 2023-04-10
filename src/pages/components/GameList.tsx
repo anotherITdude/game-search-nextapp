@@ -12,8 +12,9 @@ const GameList = () => {
       {error && <Text>{error}</Text>}
       <SimpleGrid
         columns={{ sm: 1, md: 2, lg: 3, xl: 5 }}
-        spacing={10}
+        spacing={{base:5, xl:10}}
         padding={10}
+        gap={{base:10, md:5}}
         justifyItems='center'
       >
         {isLoading &&

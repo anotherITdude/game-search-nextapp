@@ -7,6 +7,8 @@ import GameList from "./components/GameList";
 import GenreList from "./components/GenreList";
 import { useState } from "react";
 import { Genre } from '@/hooks/useGenres';
+import PlatformIconList from "./components/PlatformIconList";
+import PlatformSelector from "./components/PlatformSelector";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -36,6 +38,7 @@ export default function Home() {
           </GridItem>
         </Show>
         <GridItem area="main">
+          <PlatformSelector></PlatformSelector>
           <GameList selectedGenre={selectedGenre} />
         </GridItem>
       </Grid>

@@ -18,9 +18,11 @@ const GameList = ({ selectedGenre }: Props) => {
       <SimpleGrid
         columns={{ sm: 1, md: 2, lg: 3, xl: 5 }}
         spacing={{ base: 5, xl: 10 }}
-        padding={10}
+        paddingX={10}
+        paddingY={3}
         gap={{ base: 10, md: 5 }}
         justifyItems="center"
+        
       >
         {isLoading &&
           skeletons.map((skeleton) => (

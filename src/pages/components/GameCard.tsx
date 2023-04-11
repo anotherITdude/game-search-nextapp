@@ -14,7 +14,6 @@ const GameCard = ({ game }: Props) => {
       {game ? (
         <Card minHeight={'290px'}>
           <Image
-            width="auto"
             alt={game.name}
             src={getCroppedImage(game.background_image)}
           />

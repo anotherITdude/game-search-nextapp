@@ -20,7 +20,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
   if (error) return null;
   if (isLoading) return <Spinner />;
   return (
-    <List marginY={8}>
+    <List>
       {data?.map((genre) => (
         <ListItem key={genre.id} paddingY="5px">
           <HStack>

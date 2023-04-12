@@ -1,5 +1,5 @@
 import { Inter } from "next/font/google";
-import { Grid, GridItem, Show } from "@chakra-ui/react";
+import { Grid, GridItem, HStack, Show } from "@chakra-ui/react";
 import Navbar from "./components/Navbar";
 import GameList from "./components/GameList";
 import GenreList from "./components/GenreList";
@@ -7,6 +7,7 @@ import { useState } from "react";
 import { Genre } from "@/hooks/useGenres";
 import PlatformSelector from "./components/PlatformSelector";
 import { Platform } from "@/hooks/useGames";
+import SortSelector from "./components/SortSelector";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -42,12 +43,15 @@ export default function Home() {
           </GridItem>
         </Show>
         <GridItem area="main">
-          <PlatformSelector
-            selectedPlatform={gameQuery.platform}
-            onSelectPlatform={(platform) =>
-              setGameQuery({ ...gameQuery, platform })
-            }
-          />
+          <HStack>
+            <PlatformSelector
+              selectedPlatform={gameQuery.platform}
+              onSelectPlatform={(platform) =>
+                setGameQuery({ ...gameQuery, platform })
+              }
+            />
+            <SortSelector />
+          </HStack>
           <GameList gameQuery={gameQuery} />
         </GridItem>
       </Grid>

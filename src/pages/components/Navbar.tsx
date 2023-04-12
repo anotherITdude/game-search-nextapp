@@ -1,7 +1,5 @@
-import { Box, HStack, Icon, Text } from "@chakra-ui/react";
-import Image from "next/image";
+import {HStack, Icon, Text } from "@chakra-ui/react";
 import React from "react";
-import logo from "../../../public/logo.webp";
 import ColorModeSwitch from "./ColorModeSwitch";
 import { FaCode } from "react-icons/fa";
 

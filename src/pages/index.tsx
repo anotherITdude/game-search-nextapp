@@ -14,6 +14,7 @@ const inter = Inter({ subsets: ["latin"] });
 export interface GameQuery {
   genre: Genre | null;
   platform: Platform | null;
+  sortOrder: string
 }
 
 export default function Home() {
@@ -50,7 +51,7 @@ export default function Home() {
                 setGameQuery({ ...gameQuery, platform })
               }
             />
-            <SortSelector />
+            <SortSelector selectedSortOrder={gameQuery.sortOrder} onSortSelect={(sortOrder) => setGameQuery({...gameQuery, sortOrder})} />
           </HStack>
           <GameList gameQuery={gameQuery} />
         </GridItem>

@@ -1,5 +1,5 @@
 import { Inter } from "next/font/google";
-import { Flex, Grid, GridItem, HStack, Show } from "@chakra-ui/react";
+import { Box, Flex, Grid, GridItem, Show } from "@chakra-ui/react";
 import Navbar from "./components/Navbar";
 import GameList from "./components/GameList";
 import GenreList from "./components/GenreList";
@@ -8,6 +8,7 @@ import { Genre } from "@/hooks/useGenres";
 import PlatformSelector from "./components/PlatformSelector";
 import { Platform } from "@/hooks/useGames";
 import SortSelector from "./components/SortSelector";
+import GameHeading from './components/GameHeading';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -45,15 +46,18 @@ export default function Home() {
           </GridItem>
         </Show>
         <GridItem area="main">
-          <Flex>
-            <PlatformSelector
-              selectedPlatform={gameQuery.platform}
-              onSelectPlatform={(platform) =>
-                setGameQuery({ ...gameQuery, platform })
-              }
-            />
-            <SortSelector selectedSortOrder={gameQuery.sortOrder} onSortSelect={(sortOrder) => setGameQuery({...gameQuery, sortOrder})} />
-          </Flex>
+          <Box marginX={2}>
+            <GameHeading gameQuery={gameQuery} />
+            <Flex>
+              <PlatformSelector
+                selectedPlatform={gameQuery.platform}
+                onSelectPlatform={(platform) =>
+                  setGameQuery({ ...gameQuery, platform })
+                }
+              />
+              <SortSelector selectedSortOrder={gameQuery.sortOrder} onSortSelect={(sortOrder) => setGameQuery({...gameQuery, sortOrder})} />
+            </Flex>
+          </Box>
           <GameList gameQuery={gameQuery} />
         </GridItem>
       </Grid>

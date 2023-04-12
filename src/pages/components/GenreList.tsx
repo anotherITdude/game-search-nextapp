@@ -22,7 +22,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
   if (isLoading) return <Spinner />;
   return (
     <Box>
-      <Text fontSize={18} fontWeight={"bold"} marginBottom={4}>
+      <Text fontSize='2xl'marginTop={1} fontWeight={"bold"} marginBottom={4}>
         Genres
       </Text>
       <List>
@@ -32,6 +32,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
               <Image
                 borderRadius={8}
                 boxSize="32px"
+                objectFit='cover'
                 src={getCroppedImage(genre.image_background)}
               />
               <Button
@@ -40,6 +41,8 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
                 onClick={() => onSelectGenre(genre)}
                 variant="link"
                 fontSize="md"
+                whiteSpace='normal'
+                textAlign='left'
               >
                 {genre.name}
               </Button>

@@ -6,7 +6,7 @@ import { FaCode } from "react-icons/fa";
 const Navbar = () => {
   return (
     <div>
-      <HStack justifyContent="space-between" padding="20px 15px 20px 15px" borderBottom={'solid 0.5px'} marginBottom={10}>
+      <HStack boxShadow={'xl'} justifyContent="space-between" padding="20px 15px 20px 15px" borderBottom={'solid 0.5px'} marginBottom={10}>
         <HStack>
           <Icon  boxSize={10} fontSize={34} as={FaCode} />
           <Text>NextJS Game App</Text>

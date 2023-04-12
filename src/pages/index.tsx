@@ -1,5 +1,5 @@
 import { Inter } from "next/font/google";
-import { Box, Flex, Grid, GridItem, Show } from "@chakra-ui/react";
+import { Box, Button, Flex, Grid, GridItem, Show } from "@chakra-ui/react";
 import Navbar from "./components/Navbar";
 import GameList from "./components/GameList";
 import GenreList from "./components/GenreList";
@@ -16,7 +16,7 @@ export interface GameQuery {
   genre: Genre | null;
   platform: Platform | null;
   sortOrder: string;
-  searchText: string;
+  searchText: string | null;
 }
 
 export default function Home() {
@@ -64,7 +64,13 @@ export default function Home() {
                 onSortSelect={(sortOrder) =>
                   setGameQuery({ ...gameQuery, sortOrder })
                 }
+
               />
+              <Button onClick={() => {
+                console.log('reset')
+                setGameQuery({ ...gameQuery, genre: null, platform:null, sortOrder: '' })
+              }}>Reset Filters</Button>
+
             </Flex>
           </Box>
           <GameList gameQuery={gameQuery} />

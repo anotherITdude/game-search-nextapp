@@ -1,5 +1,5 @@
 import { Inter } from "next/font/google";
-import { Grid, GridItem, HStack, Show } from "@chakra-ui/react";
+import { Flex, Grid, GridItem, HStack, Show } from "@chakra-ui/react";
 import Navbar from "./components/Navbar";
 import GameList from "./components/GameList";
 import GenreList from "./components/GenreList";
@@ -44,7 +44,7 @@ export default function Home() {
           </GridItem>
         </Show>
         <GridItem area="main">
-          <HStack>
+          <Flex>
             <PlatformSelector
               selectedPlatform={gameQuery.platform}
               onSelectPlatform={(platform) =>
@@ -52,7 +52,7 @@ export default function Home() {
               }
             />
             <SortSelector selectedSortOrder={gameQuery.sortOrder} onSortSelect={(sortOrder) => setGameQuery({...gameQuery, sortOrder})} />
-          </HStack>
+          </Flex>
           <GameList gameQuery={gameQuery} />
         </GridItem>
       </Grid>

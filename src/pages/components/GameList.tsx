@@ -11,7 +11,6 @@ interface Props {
 
 const GameList = ({ gameQuery }: Props) => {
   const { data, error, isLoading } = useGames(gameQuery);
-  console.log(data, gameQuery)
   const skeletons = [1, 2, 3, 4, 5, 6];
   return (
     <div>

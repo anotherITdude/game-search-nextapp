@@ -8,7 +8,7 @@ import { Genre } from "@/hooks/useGenres";
 import PlatformSelector from "./components/PlatformSelector";
 import { Platform } from "@/hooks/useGames";
 import SortSelector from "./components/SortSelector";
-import GameHeading from './components/GameHeading';
+import GameHeading from "./components/GameHeading";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -35,7 +35,11 @@ export default function Home() {
         }}
       >
         <GridItem area="nav">
-          <Navbar onSearch={(searchText) => setGameQuery({...gameQuery, searchText })} />
+          <Navbar
+            onSearch={(searchText) =>
+              setGameQuery({ ...gameQuery, searchText })
+            }
+          />
         </GridItem>
         <Show above="md">
           <GridItem area="aside" paddingX={5}>
@@ -55,7 +59,12 @@ export default function Home() {
                   setGameQuery({ ...gameQuery, platform })
                 }
               />
-              <SortSelector selectedSortOrder={gameQuery.sortOrder} onSortSelect={(sortOrder) => setGameQuery({...gameQuery, sortOrder})} />
+              <SortSelector
+                selectedSortOrder={gameQuery.sortOrder}
+                onSortSelect={(sortOrder) =>
+                  setGameQuery({ ...gameQuery, sortOrder })
+                }
+              />
             </Flex>
           </Box>
           <GameList gameQuery={gameQuery} />

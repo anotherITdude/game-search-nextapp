@@ -31,9 +31,9 @@ const iconMap: { [key: string]: IconType } = {
 
 const PlatformIconList = ({ platforms }: Props) => {
   return (
-    <HStack alignItems='center'>
+    <HStack alignItems="center">
       {platforms?.map((p) => (
-        <Icon key={p.id}  marginX={1} color={"gray.400"} as={iconMap[p.slug]} />
+        <Icon key={p.id} marginX={1} color={"gray.400"} as={iconMap[p.slug]} />
       ))}
     </HStack>
   );

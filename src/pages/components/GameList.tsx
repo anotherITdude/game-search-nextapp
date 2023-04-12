@@ -3,8 +3,7 @@ import useGames, { Platform } from "../../hooks/useGames";
 import GameCard from "./GameCard";
 import SkeletonCard from "./SkeletonCard";
 import GameCardContainer from "./GameCardContainer";
-import { Genre } from "@/hooks/useGenres";
-import { GameQuery } from "../index";
+import { GameQuery } from "./../index";
 
 interface Props {
   gameQuery: GameQuery
@@ -12,6 +11,7 @@ interface Props {
 
 const GameList = ({ gameQuery }: Props) => {
   const { data, error, isLoading } = useGames(gameQuery);
+  console.log(data, gameQuery)
   const skeletons = [1, 2, 3, 4, 5, 6];
   return (
     <div>

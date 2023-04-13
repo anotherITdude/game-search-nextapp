@@ -6,9 +6,11 @@ import SearchInput from "./SearchInput";
 
 interface Props {
   onSearch: (searchInput: string) => void;
+  searchReset: () => void
+ 
 }
 
-const Navbar = ({ onSearch }: Props) => {
+const Navbar = ({ onSearch, searchReset }: Props) => {
   return (
     <div>
       <HStack

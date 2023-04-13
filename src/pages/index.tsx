@@ -36,9 +36,10 @@ export default function Home() {
       >
         <GridItem area="nav">
           <Navbar
-            onSearch={(searchText) =>
-              setGameQuery({ ...gameQuery, searchText })
-            }
+            onSearch={(searchText) => {
+              setGameQuery({ ...gameQuery, searchText });
+            }}
+            searchReset={()=> setGameQuery({ ...gameQuery, searchText:null })}
           />
         </GridItem>
         <Show above="md">
@@ -64,13 +65,20 @@ export default function Home() {
                 onSortSelect={(sortOrder) =>
                   setGameQuery({ ...gameQuery, sortOrder })
                 }
-
               />
-              <Button onClick={() => {
-                console.log('reset')
-                setGameQuery({ ...gameQuery, genre: null, platform:null, sortOrder: '' })
-              }}>Reset Filters</Button>
-
+              <Button
+                onClick={() => {
+                  console.log("reset");
+                  setGameQuery({
+                    ...gameQuery,
+                    genre: null,
+                    platform: null,
+                    sortOrder: "",
+                  });
+                }}
+              >
+                Reset Filters
+              </Button>
             </Flex>
           </Box>
           <GameList gameQuery={gameQuery} />

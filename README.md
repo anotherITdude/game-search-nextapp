@@ -1,38 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Game Search App:
+Inspired by https://rawg.io
 
-## Getting Started
 
-First, run the development server:
+## Build Stack:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+<ul>
+<li>NextJS 13</li>
+<li>TypeScript</li>
+<li>Chakra UI</li>
+<li>Axios</li>
+<li>Hosted on AWS Amplify</li>
+<li>Database pulled from RAWG api</li>
+</ul>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Features:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+<ul>
+<li>Responsive layout for all screen sizes</li>
+<li>Custom data fetching hooks</li>
+<li>Reusable HTTP services </li>
+<li>Dark Mode</li>
+<li>Live search</li>
+<li>Sorting by Genres & platform. Filter by data, name popularity & rating</li>
+<li>Search & filter operations done by using RAWG api documentation, https://api.rawg.io/docs </li>
+</ul>
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Demo Link
 
-## Learn More
+[CLICK HERE](https://main.d2sqhamzsx566d.amplifyapp.com/) to see the app hosted on AWS Amplify.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## App Screenshots
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<img width="800" alt="Screenshot 2023-04-17 at 6 30 39 PM" src="https://user-images.githubusercontent.com/4363970/232551672-c354ada8-e97c-416e-879d-b81e1254445b.png">
 
-## Deploy on Vercel
+<img width="800" alt="Screenshot 2023-04-17 at 6 30 48 PM" src="https://user-images.githubusercontent.com/4363970/232551618-6b344a46-93f4-4fcb-b406-92e9b30cd92a.png">
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<img width="800" alt="Screenshot 2023-04-17 at 6 31 02 PM" src="https://user-images.githubusercontent.com/4363970/232551518-561af567-3d12-4b78-acaa-4c1910d83bf9.png">
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<img width="273" alt="Screenshot 2023-04-17 at 6 32 05 PM" src="https://user-images.githubusercontent.com/4363970/232551723-c1d1c089-8d65-4b0c-be3f-cc530f4a6eab.png">
+

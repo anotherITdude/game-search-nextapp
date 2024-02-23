@@ -29,7 +29,7 @@ Inspired by https://rawg.io
 
 ## Demo Link
 
-[CLICK HERE](https://main.d2sqhamzsx566d.amplifyapp.com/) to see the app hosted on AWS Amplify.
+[CLICK HERE](https://another-gamesearch.netlify.app/) to see the app hosted on AWS Amplify.
 
 
 ## App Screenshots
